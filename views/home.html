@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guestbook Form</title>
+
+    <link rel="icon" type="image/png" href="images/contact-image.png">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Contact Form</h2>
+        <form>
+            <div class="grid-container">
+                <div class="form">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name">
+                </div>
+                <div class="form">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name">
+                </div>
+                <div class="form">
+                    <label for="job-title">Job Title</label>
+                    <input type="text" id="job-title" name="job-title">
+                </div>
+    
+                <div class="form">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form">
+                    <label for="linkedin">LinkedIn URL</label>
+                    <input type="url" id="linkedin" name="linkedin">
+                </div>
+                <div class="form">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email">
+                </div>
+    
+                <div class="form">
+                    <label for="meet">How did we meet?</label>
+                    <select id="meet" name="meet">
+                        <option>Please select</option>
+                        <option>Event</option>
+                        <option>Online</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form">
+                    <label for="other">Other (please specify)</label>
+                    <input type="text" id="other" name="other">
+                </div>
+            </div>
+    
+            <div class="form">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+    
+            <div class="form checkbox">
+                <input type="checkbox" id="mailing-list" name="mailing-list">
+                <label for="mailing-list">Please add me to your mailing list</label>
+            </div>
+    
+            <div class="form radio">
+                <label>Choose an email format:</label>
+                <input type="radio" id="html" name="email-format" value="HTML">
+                <label for="html">HTML</label>
+                <input type="radio" id="text" name="email-format" value="Text">
+                <label for="text">Text</label>
+            </div>
+    
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
