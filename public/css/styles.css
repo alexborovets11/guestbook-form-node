@@ -47,11 +47,22 @@ input, select, textarea {
 
 .checkbox, .radio {
     display: flex;
-    align-items: center;
+    /*align-items: ;*/
     gap: 10px;
 }
 
+
 .submit-btn {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.main-button {
     background-color: green;
     color: white;
     border: none;
