@@ -18,13 +18,17 @@ app.listen(PORT, () => {
 import express from 'express';
 
 const app = express();
-const PORT = 3000;
 
 // Middleware to parse form data
 app.use(express.urlencoded({ extended: true }));
 
 // Serve static files
 app.use(express.static('public'));
+
+// Add EJS
+app.set('view engine', 'ejs');
+
+const PORT = 3000;
 
 // Store guestbook submissions in memory
 const guestbookEntries = [];
@@ -40,6 +44,11 @@ app.get('/confirmation', (req, res) => {
 
 // Handle form submission
 app.post('/submit-contact', (req, res) => {
+    if (!req.body['first-name'] || !req.body['last-name'] || !req.body.email) {
+        return res.send('Invalid Input: All fields are required.');
+    }
+
+
     const entry = {
         firstName: req.body['first-name'],
         lastName: req.body['last-name'],
@@ -57,20 +66,23 @@ app.post('/submit-contact', (req, res) => {
 
     // Store the entry
     guestbookEntries.push(entry);
-    console.log(guestbookEntries);
+
+    //console.log(guestbookEntries);
 
     // Redirect to confirmation page
-    res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
+    //res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
+    res.render('confirmation', { entry });
 });
 
 // Admin route to view all submissions
 app.get('/admin/guestbook', (req, res) => {
-    let html = '<h1>Guestbook Entries</h1><ul>';
-    for (const entry of guestbookEntries) {
-        html += `<li>${entry.firstName} ${entry.lastName} - ${entry.email} - ${entry.company} - ${entry.message} - ${entry.timestamp}</li>`;
-    }
-    html += '</ul>';
-    res.send(html);
+    //let html = '<h1>Guestbook Entries</h1><ul>';
+    //for (const entry of guestbookEntries) {
+    //    html += `<li>${entry.firstName} ${entry.lastName} - ${entry.email} - ${entry.company} - ${entry.message} - ${entry.timestamp}</li>`;
+    //}
+    //html += '</ul>';
+    //res.send(html);
+    res.render('admin', { guestbookEntries });
 });
 
 // Start the server

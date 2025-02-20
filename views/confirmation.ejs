@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Confirmed - Guestbook</title>
+    <link rel="icon" type="image/png" href="images/contact-image.png">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/admin/guestbook">Admin</a></li>
+        </ul>
+    </nav>
+    <div id="main">
+        <header>
+            <h1>Submission Confirmed!</h1>
+            <p>Thank you for signing the guestbook.</p>
+            <a href="/" class="main-button">Submit Another Entry</a>
+        </header>
+
+        <div class="content">
+            <p>Your submission has been recorded successfully. We appreciate your contact!</p>
+
+            <div class="guestbook-details">
+                <h2>Guestbook Details</h2>
+                <p>Name: <%= entry.firstName %> <%= entry.lastName %></p>
+                <p>Email: <%= entry.email %></p>
+                <p>Job Title: <%= entry.jobTitle %></p>
+                <p>Company: <%= entry.company %></p>
+                <p>LinkedIn URL: <%= entry.linkedin %></p>
+                <p>How did we meet?: <%= entry.meet %></p>
+                <p>Other: <%= entry.other %></p>
+                <p>Message: <%= entry.message %></p>
+                <p>Mailing List: <%= entry.mailingList %></p>
+                <p>Email Format: <%= entry.emailFormat %></p>
+                <p>TimeStamp: <%= entry.timestamp %></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

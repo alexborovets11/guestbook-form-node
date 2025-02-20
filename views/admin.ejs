@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Guestbook Form</title>
+    <link rel="icon" type="image/png" href="/images/contact-image.png">
+    <link rel="stylesheet" href="/css/admin-styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/admin/guestbook">Admin</a></li>
+        </ul>
+    </nav>
+    <div id="main">
+        <header>
+            <h1>Guestbook Management</h1>
+            <p>View all guestbook forms</p>
+            <a href="/" class="main-button">Back to Guestbook Form</a>
+        </header>
+
+        <div class="content">
+            <h2>All Guestbooks</h2>
+            <% if (guestbookEntries.length === 0) { %>
+                <p>No guestbooks yet!</p>
+            <% } else { %>
+                <% guestbookEntries.forEach(entry => { %>
+                    <div class="guestbook-card">
+                        <h3>Name: <%= entry.firstName %> <%= entry.lastName %></h3>
+                        <p><b>Email: </b> <%= entry.email %></p>
+                        <p><b>Job Title: </b> <%= entry.jobTitle %></p>
+                        <p><b>Company: </b> <%= entry.company %></p>
+                        <p><b>LinkedIn URL: </b> <%= entry.linkedin %></p>
+                        <p><b>How did we meet?: </b> <%= entry.meet %></p>
+                        <p><b>Other: </b> <%= entry.other %></p>
+                        <p><b>Message: </b> <%= entry.message %></p>
+                        <p><b>Mailing List: </b> <%= entry.mailingList %></p>
+                        <p><b>Email Format: </b> <%= entry.emailFormat %></p>
+                        <!--<p>TimeStamp: <%= entry.timestamp %></p>-->
+                        <p class="timestamp">Submitted: <%= entry.timestamp.toLocaleString() %></p>
+                    </div>
+                <% }); %>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html> 
