@@ -5,6 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding-top: 50px;
 }
 
 .container {
@@ -111,4 +112,12 @@ nav ul li a:hover {
 
 .container {
     margin-top: 60px; 
+}
+
+.err {
+    font-family: Arial, sans-serif;
+    font-size: 0.8rem;
+    color: darkred;
+    display: none;
+    margin-top: 5px;
 }

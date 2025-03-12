@@ -1,2 +1,4 @@
 node_modules/
 guestbook-form-node/
+views/confirmation.html
+guestbook-script.sql

@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="images/contact-image.png">
 
     <link rel="stylesheet" href="/css/styles.css">
+    <script src="/scripts/client-validation.js" defer></script>
 
 
 
@@ -22,42 +23,49 @@
     <div class="container">
         <h2>Contact Form</h2>
 
-        <form action="/submit-contact" method="post">
+        <form action="/submit-contact" method="post" id="guestbook-form">
             <div class="grid-container">
                 <div class="form">
                     <label for="first-name">First Name</label>
                     <input type="text" id="first-name" name="first-name">
+                    <span class="err" id="err-first-name">First name is required</span>
                 </div>
                 <div class="form">
                     <label for="last-name">Last Name</label>
                     <input type="text" id="last-name" name="last-name">
+                    <span class="err" id="err-last-name">Last name is required</span>
                 </div>
                 <div class="form">
                     <label for="job-title">Job Title</label>
                     <input type="text" id="job-title" name="job-title">
+                    <span class="err" id="err-job-title">Job title is required</span>
                 </div>
     
                 <div class="form">
                     <label for="company">Company</label>
                     <input type="text" id="company" name="company">
+                    <span class="err" id="err-company">Company is required</span>
                 </div>
                 <div class="form">
                     <label for="linkedin">LinkedIn URL</label>
-                    <input type="url" id="linkedin" name="linkedin">
+                    <input type="text" id="linkedin" name="linkedin">
+                    <span class="err" id="err-linkedin">LinkedIn must be a valid URL starting with "linkedin.com/in/"</span>
                 </div>
                 <div class="form">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email">
+                    <span class="err" id="err-email">Email is required and must be valid</span>
                 </div>
     
                 <div class="form">
                     <label for="meet">How did we meet?</label>
                     <select id="meet" name="meet">
-                        <option>Please select</option>
+                        <option value="">Please select</option>
                         <option>Event</option>
                         <option>Online</option>
                         <option>Other</option>
                     </select>
+                    <span class="err" id="err-meet">Please select how we met</span>
                 </div>
                 <div class="form">
                     <label for="other">Other (please specify)</label>
@@ -68,6 +76,7 @@
             <div class="form">
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="4"></textarea>
+                <span class="err" id="err-message">Message is required</span>
             </div>
     
             <div class="form checkbox">
@@ -81,6 +90,7 @@
                 <label for="html">HTML</label>
                 <input type="radio" id="text" name="email-format" value="Text">
                 <label for="text">Text</label>
+                <span class="err" id="err-email-format">Please select an email format</span>
             </div>
     
             <button type="submit" class="submit-btn">Submit</button>
